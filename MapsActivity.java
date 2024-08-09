@@ -334,86 +334,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
              }
          });
      }
-     public void Track0_Onclick(View view){
-         mMap.clear();
-         mMap2.clear();
-         Trackfind(0);
-         Toast.makeText(this, "Track 0 selected", Toast.LENGTH_SHORT).show();
-     }
-     public void Track1_Onclick(View view){
-         Trackfind(1);
-         Toast.makeText(this, "Track 1 selected", Toast.LENGTH_SHORT).show();
-         try {
-             String lat = "17.60189183896";
-             String lon = "78.12661039844";
-             mMap.clear();
-             mMap2.clear();
-             LatLng latLng = new LatLng(Double.parseDouble(lat), Double.parseDouble(lon));
-
-             mMap.addMarker(new MarkerOptions().position(latLng).title("Source").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-             CameraPosition myPosition = new CameraPosition.Builder()
-                     .target(latLng).zoom(20).build();
-             mMap.animateCamera(
-                     CameraUpdateFactory.newCameraPosition(myPosition));
-
-             String lat2 = "17.60200779233";
-             String lon2 = "78.12682733373";
-
-             LatLng latLng2 = new LatLng(Double.parseDouble(lat2), Double.parseDouble(lon2));
-
-             mMap2.addMarker(new MarkerOptions().position(latLng2).title("Destination").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-             CameraPosition myPosition2 = new CameraPosition.Builder()
-                     .target(latLng2).zoom(20).build();
-             mMap2.animateCamera(
-                     CameraUpdateFactory.newCameraPosition(myPosition2));
-
-
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-
-     }
-     public void Track2_Onclick(View view){
-         Trackfind(2);
-         Toast.makeText(this, "Track 2 selected", Toast.LENGTH_SHORT).show();
-         try {
-             String lat = "17.60236551785";
-             String lon = "78.12711645113";
-             mMap.clear();
-             mMap2.clear();
-             LatLng latLng = new LatLng(Double.parseDouble(lat), Double.parseDouble(lon));
-
-             mMap.addMarker(new MarkerOptions().position(latLng).title("Source").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-             CameraPosition myPosition = new CameraPosition.Builder()
-                     .target(latLng).zoom(20).build();
-             mMap.animateCamera(
-                     CameraUpdateFactory.newCameraPosition(myPosition));
-
-             String lat2 = "17.60263221625";
-             String lon2 = "78.12714639040";
-
-             LatLng latLng2 = new LatLng(Double.parseDouble(lat2), Double.parseDouble(lon2));
-
-             mMap2.addMarker(new MarkerOptions().position(latLng2).title("Destination").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE)));
-             CameraPosition myPosition2 = new CameraPosition.Builder()
-                     .target(latLng2).zoom(20).build();
-             mMap2.animateCamera(
-                     CameraUpdateFactory.newCameraPosition(myPosition2));
-
-
-         } catch (Exception e) {
-             e.printStackTrace();
-         }
-
-     }
-     private void Trackfind(int val){
-         databaseReference = FirebaseDatabase.getInstance().getReference("Track");
-         HashMap hashMap = new HashMap();
-         hashMap.put("key", val);
-
-         databaseReference.updateChildren(hashMap);
-
-     }
+    
+     
 
 
 
